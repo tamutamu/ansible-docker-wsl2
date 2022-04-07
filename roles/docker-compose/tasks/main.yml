@@ -1,0 +1,15 @@
+---
+- name: install jq, for get docker-compose latest version
+  apt:
+    name: jq
+    state: present
+
+- name: get docker-compose latest version
+  shell: curl https://api.github.com/repos/docker/compose/releases/latest | jq .name -r
+  register: docker_compose_latest_version
+
+- name: Install docker-compose
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/{{ docker_compose_latest_version.stdout }}/docker-compose-{{ ansible_system }}-{{ ansible_architecture }}"
+    dest: /usr/local/bin/docker-compose
+    mode: +x

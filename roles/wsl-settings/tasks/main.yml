@@ -1,0 +1,15 @@
+---
+- name: copy wsl.conf
+  template:
+    src: wsl.conf.j2
+    dest: /etc/wsl.conf
+    owner: root
+    group: root
+    mode: 0644
+
+
+- name: copy resolv.conf
+  copy:
+    src: resolv.conf
+    dest: /etc/
+    mode: u=rwx,g=r,o=r
