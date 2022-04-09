@@ -4,7 +4,7 @@
   become: true
   roles:
     - { role: wsl-settings }
-    - { role: wsl-systemd }
     - { role: docker }
     - { role: docker-compose }
+    - { role: wsl-systemd }
 
