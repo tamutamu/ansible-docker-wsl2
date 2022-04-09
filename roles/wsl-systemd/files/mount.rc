@@ -1,2 +1,3 @@
 #!/bin/bash
-pidof systemd || daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target
+###pidof systemd || daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target
+service docker start

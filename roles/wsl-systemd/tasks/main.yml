@@ -1,8 +1,8 @@
 ---
-- name: install dependency packages
-  apt:
-    name: "daemonize"
-    state: latest
+#- name: install dependency packages
+#  apt:
+#    name: "daemonize"
+#    state: latest
 
 
 - name: setting startup command
@@ -25,3 +25,4 @@
 - name: start systemd
   shell: |
     /sbin/mount.rc
+  ignore_errors: true
