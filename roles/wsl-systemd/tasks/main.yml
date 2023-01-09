@@ -4,7 +4,6 @@
 #    name: "daemonize"
 #    state: latest
 
-
 - name: setting startup command
   blockinfile: 
     path: /etc/fstab
@@ -14,13 +13,11 @@
     block: |
       none none rc defaults 0 0
 
-
 - name: copy mount.rc
   copy: 
     src: mount.rc
     dest: /sbin/
     mode: u=rwx,g=r,o=r
-
 
 - name: start systemd
   shell: |
