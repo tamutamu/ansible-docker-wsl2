@@ -13,4 +13,8 @@
         $ ./setup.sh
         $ ./ctl
         ```
-  1. 一度wslからログアウトし、再度wslにログインして完了です。
+  1. 一度wslからログアウトし、下記コマンドでdev-ubuntuを終了します。そして再度ログインすることで完了です。
+     ```
+     wsl -t dev-ubuntu
+     wsl -d dev-ubuntu
+     ```
